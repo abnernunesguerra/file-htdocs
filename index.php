@@ -1,40 +1,42 @@
 <?php
 
-    /*
-    * ----------------------------------------
-    *  Initial file location server Apache/PHP
-    * ----------------------------------------
-    *
-    * @author:  Estefanio NS <estefanions AT gmail DOT net> 
-    * @url:     http://estefanio.com.br
-    *
-    */
+/*
+ * ----------------------------------------
+ *  Initial file location server Apache/PHP
+ * ----------------------------------------
+ *
+ * @author:  Estefanio NS <estefanions AT gmail DOT net> 
+ * @url:     http://estefanio.com.br
+ *
+ */
+$folders    = array(); 
+$files      = array(); 
 
-            $pointer = opendir(getcwd());
-            $notInArr = array('.', '..', 'index.php', 'indexhtdocs');
+$pointer = opendir(getcwd());
+$notInArr = array('.', '..', 'index.php', 'indexhtdocs');
 
-            while ($row = readdir($pointer)) 
-            {
-                $itens[] = $row;
-            }
-            sort($itens);
+while ($row = readdir($pointer)) 
+{
+    $itens[] = $row;
+}
+sort($itens);
 
 
-            foreach ($itens as $list) 
-            {
-                if (!in_array($list, $notInArr)) 
-                {
+foreach ($itens as $list) 
+{
+    if (!in_array($list, $notInArr)) 
+    {
 
-                    if (is_dir($list)) 
-                    { 
-                        $folders[] = $list; 
-                    } 
-                    else 
-                    { 
-                        $files[] = $list; 
-                    }
-                }
-            }
+        if (is_dir($list)) 
+        { 
+            $folders[] = $list; 
+        } 
+        else 
+        { 
+            $files[] = $list; 
+        }
+    }
+}
 
 
 
@@ -55,11 +57,11 @@
     php: <?php echo phpversion(); ?>
 </div>
 
+<?php if(count($folders)){ ?>
 <div class="fold">
     <div class="wg12">
         <h1>Folders</h1>
     </div>
-<?php if($folders != ''){ ?>
     <div class="row">
 <?php for($i = 0; $i < count($folders); $i++){ ?>
         <div class="wg_phone12 wg_tablet6 wg_mobile4 wg3">
@@ -67,18 +69,16 @@
         </div>
 <?php } ?>
     </div>
-<?php } ?>
 </div>
+<?php } ?>
 
 
 
-
-
+<?php if(count($files)){ ?>
 <div class="fold">
     <div class="wg12">
         <h1>Files</h1>
     </div>
-<?php if($files != ''){ ?>
     <div class="row">
 <?php for($i = 0; $i < count($files); $i++){ ?>
         <div class="wg_phone12 wg_tablet6 wg_mobile4 wg3">
@@ -86,8 +86,8 @@
         </div>
 <?php } ?>
     </div>
-<?php } ?>
 </div>
+<?php } ?>
 
 
 
@@ -110,7 +110,7 @@
 </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="/public/js/script.js"></script>
+    <script type="text/javascript" src="public/js/script.js"></script>
 <!--[if lt IE 9]>
     <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
