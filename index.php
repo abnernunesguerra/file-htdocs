@@ -46,7 +46,7 @@ foreach ($itens as $list)
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/indexhtdocs/public/css/style.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/indexhtdocs/common/css/style.min.css" type="text/css" media="all" />
         <title>Htdocs</title>
     </head>
 <body>
@@ -110,7 +110,7 @@ foreach ($itens as $list)
 </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="public/js/script.js"></script>
+    <script type="text/javascript" src="common/js/script.js"></script>
 <!--[if lt IE 9]>
     <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
